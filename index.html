@@ -483,7 +483,9 @@ html.js .risk.is-hot .mit, html.js .risk.is-open .mit, html.js .risk:focus-visib
 .mit b { font-weight: 600; color: var(--ink); margin-right: .3rem; }
 .risk-hint { margin-top: .7rem; }
 html:not(.js) .risk-hint { display: none; }
-@media print { .risk .mit { display: block !important; } .risk-hint { display: none; } }
+@media print { .risk .mit { display: block !important; } .risk-hint { display: none; }
+  /* all five responses show in print, so tighten them to fit one page */
+  .risk { padding-top: .5rem; padding-bottom: .5rem; } .risk p { line-height: 1.45; margin-top: .15rem; font-size: .96rem; } }
 
 /* ================================================================ page 10, next steps */
 .steps-wrap { counter-reset: step; }
@@ -865,6 +867,7 @@ html:not(.js) .risk-hint { display: none; }
         <div class="gate" tabindex="0"><p class="gate-mark">80%</p><p class="gate-what">Of critical findings are confirmed real by the bank's security team</p><p class="gate-why">Teams spend about 30 hours checking each critical finding today, so false alarms would kill trust</p></div>
         <div class="gate" tabindex="0"><p class="gate-mark">60%</p><p class="gate-what">Gross margin at the price banks actually pay</p><p class="gate-why">Mythos token use is the least certain cost, so margin is proven before sales spending grows</p></div>
       </div>
+      <p class="note risk-hint">Point at or tap a gate to see why it matters.</p>
     </div>
   </div>
   <footer class="foot">
@@ -967,6 +970,7 @@ html:not(.js) .risk-hint { display: none; }
           <button class="rdot" type="button" data-risk="2" style="left:28%;top:13%" aria-label="Risk 2, Rubrik loses access to Mythos">2</button>
           <button class="rdot" type="button" data-risk="3" style="left:56%;top:40%" aria-label="Risk 3, scans cost more than I estimate">3</button>
           <button class="rdot" type="button" data-risk="4" style="left:80%;top:68%" aria-label="Risk 4, auditors still want a full human pen test">4</button>
+          <button class="rdot" type="button" data-risk="5" style="left:60%;top:60%" aria-label="Risk 5, insurers and payments firms buy more slowly than banks">5</button>
         </div>
         <div class="rm-x"><span>Less likely</span><span>More likely</span></div>
       </div>
@@ -977,6 +981,7 @@ html:not(.js) .risk-hint { display: none; }
         <div class="risk" tabindex="0" data-risk="2"><span class="risk-n">2</span><div><h4>Rubrik loses access to Mythos</h4><p class="mit"><b>Response</b> The US government made Anthropic switch Mythos off for every customer for 19 days in June 2026. If that happens again, the product switches to Claude Opus 5.5, which catches slightly fewer flaws, 81% against 90% in Anthropic's test. Customer contracts promise tested apps, not a specific AI model, so a switch breaks no contract.</p></div></div>
         <div class="risk" tabindex="0" data-risk="3"><span class="risk-n">3</span><div><h4>Scans cost more than I estimate</h4><p class="mit"><b>Response</b> If scans use twice the tokens I expect, a license earns about <span data-math="risk_cost">59%</span>, just under the 60% gate. Pilots measure margin before Rubrik scales, and ranking files by risk first, as Anthropic's own scanner does, cuts token use.</p></div></div>
         <div class="risk" tabindex="0" data-risk="4"><span class="risk-n">4</span><div><h4>Auditors still want a full human pen test</h4><p class="mit"><b>Response</b> PCI and NYDFS want the yearly pen test done by a qualified person. A certified partner tester checks and signs Rubrik's findings, which keeps the test human-in-the-loop and lets the findings count toward it. If an auditor still wants a full separate test, Rubrik becomes extra spend, and the pilots show whether banks will pay for it.</p></div></div>
+        <div class="risk" tabindex="0" data-risk="5"><span class="risk-n">5</span><div><h4>Insurers and payments firms buy more slowly than banks</h4><p class="mit"><b>Response</b> They follow the same yearly pen test rules as banks, so the buyer and the evidence pack carry over, and Rubrik pitches them in 2028 with results from the first banks. If they still lag, the 30 new customers planned for 2028 lean harder on banks.</p></div></div>
       </div>
       <p class="note risk-hint">Point at or tap a risk to see the response.</p>
     </div>
